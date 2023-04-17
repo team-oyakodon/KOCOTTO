@@ -2,13 +2,13 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root "top#kocotto"
   get "kocotto", to: "top#kocotto"
-  get "login", to: "user_sessions#new"
-  post "login", to: "user_sessions#create"
-  delete "logout", to: "user_sessions#destroy"
+  # get "login", to: "user_sessions#new"
+  # post "login", to: "user_sessions#create"
+  # delete "logout", to: "user_sessions#destroy"
   get "search", to: "top#search"
   resources :top, only: %i[index show]
-  resources :users, only: %i[new create destroy]
-  resource :profile
+  # resources :users, only: %i[new create destroy]
+  # resource :profile
   get "user_supports", to: "profiles#user_supports"
   get "hospitals/index", to: "hospitals#index"
   get "hospitals/search", to: "hospitals#search"
